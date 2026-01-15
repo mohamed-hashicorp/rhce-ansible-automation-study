@@ -1,0 +1,5 @@
+home-lab:
+  hosts:
+    192.168.178.245:
+      ansible_user: mohamed
+    

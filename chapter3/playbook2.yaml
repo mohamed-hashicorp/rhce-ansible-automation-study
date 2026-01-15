@@ -1,0 +1,26 @@
+---
+- name: Webserver
+  hosts: web
+  become: true
+
+  tasks:
+  - name: Install apache
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+
+- name: Database servers
+  hosts: database
+  become: true
+  
+  tasks:
+  - name: Install postgres
+    ansible.builtin.yum:
+      name: postgresql-server
+      state: latest
+  - name: Initialize the database
+    ansible.builtin.command: /usr/bin/postgresql-setup --initdb
+  - name: Enable database service
+    ansible.builtin.service:
+      name: postgresql
+      state: started

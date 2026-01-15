@@ -1,0 +1,53 @@
+cat playbook4.yaml
+---
+- name: Webservers
+  hosts: web
+  become: true
+
+  tasks:
+  - name: Install nginx
+    ansible.builtin.dnf:
+      name: nginx
+
+  - name: install firewalld
+    ansible.builtin.dnf:
+      name: firewalld
+
+  - name: copy nginx file
+    ansible.builtin.copy:
+      src: nginx.conf
+      dest: /etc/nginx/conf.d/localhost.conf
+
+  - name: copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /usr/share/nginx/html/index.html
+    tags: ['deploy']
+
+  - name: Enable nginx service
+    ansible.builtin.service:
+      name: nginx
+      state: started
+
+  - name: check website status
+    ansible.builtin.uri:
+      url: http://localhost/index.html
+      return_content: yes
+    register: response
+    tags: ['deploy']
+
+  - name: print results
+    ansible.builtin.debug:
+      var: response.content
+    tags: ['deploy', 'test']
+
+  - name: permit traffic in default zone for http service
+    ansible.posix.firewalld:
+      service: http
+      permanent: true
+      state: enabled
+
+  - name: restart firewalld
+    ansible.builtin.service:
+      name=firewalld
+      state=restarted

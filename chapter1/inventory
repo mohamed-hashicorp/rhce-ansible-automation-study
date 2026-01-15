@@ -1,0 +1,7 @@
+[web]
+172.31.42.158 ansible_user=fedora ansible_ssh_private_key_file=/root/ansible/tfe.key
+172.31.39.16 ansible_user=fedora ansible_ssh_private_key_file=/root/ansible/tfe.key
+
+[database]
+172.31.39.176 ansible_user=fedora ansible_ssh_private_key_file=/root/ansible/tfe.key
+
