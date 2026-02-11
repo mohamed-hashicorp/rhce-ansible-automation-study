@@ -1,0 +1,3 @@
+users:
+  - {username: 'Ada', password: '$y$j9T$68mjAbPmPM.0veTrWjXNx.$FdvdDAE92QRWE/L2p.mcMjB3gOqEu0Ki3rPtZvxLCLC', keyfile: './id_rsa_ada.pub' }
+  - {username: 'Alexandra', password: '$y$j9T$68mjAbPmPM.0veTrWjXNx.$FdvdDAE92QRWE/L2p.mcMjB3gOqEu0Ki3rPtZvxLCLC', keyfile: './id_rsa_aixa.pub' }

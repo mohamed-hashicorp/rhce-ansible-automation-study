@@ -1,0 +1,9 @@
+- name: Checks Google 
+  hosts: all
+  tasks:
+    - name: Fetch webpage
+      uri:
+        url: http://worldtimeapi.org/api/timezone/Europe/Madrid
+        return_content: true
+      register: output
+      changed_when: "output.status == 200"

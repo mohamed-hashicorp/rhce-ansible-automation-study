@@ -1,0 +1,9 @@
+- name: Echoing Vars
+  hosts: all
+  tasks:
+    - name: Echo var
+      ansible.builtin.command: /bin/echo "Hello World {{msg_name}}"
+      register: response 
+    - name: Print result
+      debug:
+        var: response

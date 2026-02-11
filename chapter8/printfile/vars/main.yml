@@ -1,0 +1,3 @@
+---
+# vars file for printfile
+show_file: /etc/hosts

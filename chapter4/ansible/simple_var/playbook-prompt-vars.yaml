@@ -1,0 +1,14 @@
+- name: Echoing Vars
+  hosts: all
+  vars_prompt: # <1>
+    - name: msg_name # <2>
+      prompt: What's the name?
+      private: false # <3>
+      default: Ada
+  tasks:
+    - name: Echo var
+      ansible.builtin.command: /bin/echo "Hello World {{msg_name}}"
+      register: response
+    - name: Print result
+      debug:
+        var: response

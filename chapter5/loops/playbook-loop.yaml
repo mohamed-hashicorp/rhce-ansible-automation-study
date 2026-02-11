@@ -1,0 +1,10 @@
+- name: Echoing in loops 
+  hosts: all
+  tasks:
+    - name: Echo var
+      ansible.builtin.command: /bin/echo "Hello World {{item}}"
+      loop: [ 'Ada', 'Aixa']
+      register: response 
+    - name: Print result
+      debug:
+        var: response

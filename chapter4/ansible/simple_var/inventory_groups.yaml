@@ -1,0 +1,21 @@
+web_tokyo:
+  hosts:
+    web1.example.com
+
+web_denver:
+  hosts:
+    web2.example.com
+
+db_tokyo:
+  hosts:
+    db1.example.com
+
+db_denver:
+  hosts:
+    db2.example.com
+tokyo:
+  children:
+    web_tokyo:
+    db_tokyo:
+
+....

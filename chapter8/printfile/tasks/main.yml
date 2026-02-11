@@ -1,0 +1,8 @@
+---
+# tasks file for printfile
+- name: Display file contents
+  command: "cat {{show_file}}"
+  register: command_output
+- name: Print to console
+  debug:
+    msg: "{{command_output.stdout}}"
