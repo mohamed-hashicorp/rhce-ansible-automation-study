@@ -1,0 +1,30 @@
+[home_lab]
+192.168.178.245 ansible_user=mohamed
+192.168.178.184 ansible_user=mohamedayman
+
+[rhel_servers]
+192.168.178.184 ansible_user=root
+
+[aws_cloud]
+52.208.162.147
+
+[web]
+54.195.54.171
+
+[database]
+54.74.14.176
+
+
+[aws_cloud:vars]
+ansible_user=fedora
+ansible_ssh_private_key_file=/Users/mohamedayman/Downloads/tfe-key.pem
+
+[web:vars]
+ansible_user=fedora
+ansible_ssh_private_key_file=/Users/mohamedayman/Downloads/tfe-key.pem
+
+[database:vars]
+ansible_user=fedora
+ansible_ssh_private_key_file=/Users/mohamedayman/Downloads/tfe-key.pem
+
+

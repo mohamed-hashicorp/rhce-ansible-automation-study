@@ -1,0 +1,8 @@
+- name: Gather Ansible facts
+  hosts: aws_cloud
+  become: false
+  # gather_facts: false # Disable fact gathering
+  tasks:
+    - name: Gather facts
+      ansible.builtin.debug:
+        var: ansible_facts

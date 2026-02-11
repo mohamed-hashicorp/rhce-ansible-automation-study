@@ -1,5 +1,5 @@
 [therock]
-db ansible_host=192.168.1.115
+db ansible_host=54.77.2.184
 
 [world:children]
 therock

@@ -1,0 +1,17 @@
+- name: Gather Ansible facts
+  hosts: aws_cloud
+  become: false
+  vars:
+    msg_name: Hello World Mohamed
+
+  tasks:
+    - name: run a command
+      ansible.builtin.command: echo "{{ msg_name }}" 
+      register: command_output
+
+    - name: Print command output
+      ansible.builtin.debug:
+        var: command_output
+
+
+

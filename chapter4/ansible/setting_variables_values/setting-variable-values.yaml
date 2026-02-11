@@ -1,0 +1,12 @@
+- name: Gather Ansible facts
+  hosts: aws_cloud
+  become: false
+  vars:
+    msg_name: Hello World Mohamed
+
+  tasks:
+    - name: Print variable value
+      ansible.builtin.debug:
+        var: msg_name  
+
+
