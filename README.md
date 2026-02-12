@@ -22,3 +22,13 @@ The project is organized by chapter to align with the curriculum:
 | **Chapter 06** | File Deployment | Working with templates (Jinja2) and file modules. |
 | **Chapter 07** | Ansible Roles | Organizing playbooks into reusable structures. |
 
+## Lab Environment & Execution Details
+
+All labs and exercises in this repository were executed from my local laptop, which acted as the Ansible control node.
+
+The Ansible managed hosts were Linux servers deployed on AWS.
+
+### Important Notes:
+- Inventory files included in this repository are environment-specific.
+- You must update the inventory files to match your own hostnames, IP addresses, SSH users, and key paths.
+- Ensure your managed nodes are reachable from your control node and meet the required RHEL/Ansible prerequisites.
