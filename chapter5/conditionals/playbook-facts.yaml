@@ -5,10 +5,14 @@
   - name: Get the distribution
     set_fact:
       distribution: "{{ ansible_facts['distribution'] }}"
-  - name: install nginx in Fedora
+    register: distribution_result
+  - name: Print distribution
+    debug:
+      var: distribution_result 
+  - name: install nginx in Redhat
     dnf:
       name: nginx
-    when: distribution == "Fedora"
+    when: distribution == "RedHat"
   - name: install nginx in Debian
     apt:
       name: ngnix

@@ -1,0 +1,13 @@
+- name: Add several users
+  hosts: all
+  tasks:
+    - name: Add user {{ item }}
+      ansible.builtin.user:
+        name: "{{ item.name }}"
+        state: present
+        groups: "{{ item.groups }}"
+      loop: "{{ userinfo | dict2items }}"
+      vars:
+        userinfo:
+          name: mohamed
+          groups: wheel

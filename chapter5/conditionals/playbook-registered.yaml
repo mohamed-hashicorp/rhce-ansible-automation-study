@@ -2,11 +2,11 @@
   hosts: all
   tasks:
   - name: Check if file already exists
-    command: ls /home/alex/application.properties
+    command: ls /home/ec2-user/application.properties
     register: file_exists
     ignore_errors: yes
   - name: Copy conf file for the app
     copy: 
       src: application.properties
-      dest: /home/alex/application.properties
+      dest: /home/ec2-user/application.properties
     when: file_exists is failed
