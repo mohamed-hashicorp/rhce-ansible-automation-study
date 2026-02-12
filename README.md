@@ -1,4 +1,4 @@
-# [WIP] RHCE Study Guide - Lab Code & Exercises
+# RHCE Study Guide - Lab Code & Exercises
 This is personal study repository for the **Red Hat Certified Engineer (RHCE)** certification. This repo contains the code, playbooks, and configuration files I developed while working through the study guide.
 
 ## About the repo
