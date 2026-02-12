@@ -1,10 +1,10 @@
 - name: CustomModule
-  hosts: all 
+  hosts: web 
 
   tasks:
     - name: executes custom module
       hello: 
-        name: "Alexandra" 
+        name: "Mohamed" 
       register: demo_greeting 
     - name: dump output
       debug: 
