@@ -1,9 +1,9 @@
 ---
 - name: configuration template
-  hosts: all
+  hosts: web
   vars: # <1>
-    - username: Alex
-    - password: Alex
+     username: ec2-user
+     password: ec2-user
   tasks:
     - name: Copy conf files
       template: # <2>
